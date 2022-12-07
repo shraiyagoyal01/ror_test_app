@@ -1,0 +1,10 @@
+<div class="container"><p style="color: green"><%= notice %></p></div>
+
+<%= render @line_item %>
+
+<div class="container">
+  <%= link_to "Edit", edit_line_item_path(@line_item) %> |
+  <%= link_to "Back", line_items_path %>
+
+  <%= button_to "Destroy", @line_item, method: :delete %>
+</div>

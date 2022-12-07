@@ -1,0 +1,113 @@
+@import "bootstrap";
+@import "font-awesome";
+@import "outer";
+
+.navbar{
+ background-color: grey !important;
+}
+.nav-link{
+    color: black !important;
+    font-size: 20px ;
+    font-family: sans-serif;
+}
+.img-responsive{
+    width: 60px;
+    height: 54px;
+}
+.logout-button{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+#home-container{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.jumbotron {
+    background-image: asset-url('jumbo-copy.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 448px;
+    width: 1100px;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  
+  #page-content {
+    flex: 1 0 auto;
+    background-color: gainsboro;
+  }
+  
+  #sticky-footer {
+    flex-shrink: none;
+  }
+  .product-index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  
+    .product{
+      border-left: 0;
+      border-top: 0;
+      position: relative;
+      min-height: 375px;
+    
+      .title{
+        line-height: 1.6rm;
+      }
+      .price {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+    }  
+    .instrument-thumb {
+      position: relative;
+      max-height: 150px;
+      overflow: hidden;
+
+      img {
+        max-width: 100%;
+        width: 100%;
+        :hover{
+          opacity: .9;
+        }
+      }
+      .condition{
+        position: absolute;
+        bottom: 10px;
+        right: 9px;
+      }
+    }
+  }
+  .product-show {
+    .feature-image img {
+      width: 100%;
+    }
+    .add-to-cart{
+      width: 100%;
+    }
+  }
+  .user-email{
+    margin-top: 4.5%;
+    padding-right: 5px;
+}
+
+.img-resp{
+  width: 293px;
+  height: 300px;
+}
+.img-res{
+  width: 500px;
+  height: 400px;
+}
+.img-resm
+{
+  width: 100px;
+  height: 100px;
+}
+.set {
+  margin-right: 15px !important;
+  margin-top: 7px !important;
+}

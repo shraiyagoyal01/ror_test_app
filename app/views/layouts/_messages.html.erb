@@ -1,0 +1,34 @@
+<div class="container">
+<% if notice %>
+	<div class='alert alert-success global-notification'>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+		<%= notice %>
+	</div>
+<% end %>
+<% if alert %>
+	<div class='alert alert-danger global-notification'>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+		<%= alert %>
+	</div>
+<% end %>
+</div>
+
+
+
+<script>
+document.addEventListener("turbolinks:load", function() {
+
+  var notification = document.querySelector('.global-notification');
+
+  if(notification) {
+    window.setTimeout(function() {
+      notification.style.display = "none";
+    }, 4000);
+  }
+
+});
+</script>

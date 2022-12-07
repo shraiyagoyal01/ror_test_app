@@ -1,0 +1,29 @@
+<div class="container">
+    <header class="main-content__header" role="banner">
+    <h1 class="main-content__page-title">
+    Browse the latest Products
+    </h1>
+    </header>
+    <div class="row justify-content-md-center">
+    
+        <% @products.each do |product| %>
+            <div class="card" style="width: 20rem;" id="card-style"   >
+                <div class="container">
+                    <% if product.image.present? %> 
+                        <%= image_tag(product.image_url, class: "img-resp") %>
+                    <% else %>
+                        Looks like you don't have any images uploaded!   
+                    <% end %>
+                </div>
+
+                <div class="card-body">
+                    <%= product.condition %>
+                    <h3><%= link_to product.title, product %> </h3> 
+                    <%= number_to_currency(product.price) %>
+                </div>
+            </div>
+        <% end %>  
+    
+    </div>
+
+</div>

@@ -1,0 +1,128 @@
+<%= form_with(model: @product, url: admin_products_path, local: true, method: :post, validate: true,  required: true, id: "fo" ) do |f| %>
+
+  <section class="main-content__body">
+
+    <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+      <%= f.label :Title %>
+      </div>
+      <div class="field-unit__field" id = "title">
+        <%= f.text_field :title, placeholder: "Title of product" %>
+        <span id="title-feedback"></span>
+      </div>
+    </div>
+
+    <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+        <%= f.label :Model %>
+      </div> 
+      <div class="field-unit__field" id = "model">
+        <%= f.text_field :model, placeholder: "Enter Model of Product" %>
+        <span id="model-feedback"></span>
+      </div> 
+    </div>
+
+    <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+        <%= f.label :Description%>
+      </div>
+      <div class="field-unit__field" id = "description">
+        <%= f.text_area :description, placeholder: "Enter Description of Product" %>
+        <span id="description-feedback"></span>
+      </div>
+    </div>
+    
+  
+    <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+        <%= f.label :Brand %>
+      </div>
+      <div class="field-unit__field" id = "brand">
+        <%= f.text_field :brand, placeholder: "Enter Brand of Product" %>
+        <span id="brand-feedback"></span>
+      </div>
+    </div>
+
+    <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+        <%= f.label :Price %>
+      </div>
+      <div class="field-unit__field" id = "price">
+        <%= f.number_field :price, placeholder: "Enter Price of Product" %>
+        <span id="price-feedback"></span>
+      </div>
+    </div>
+
+    <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+        <%= f.label :Finish %>
+      </div>
+      <div class="field-unit__field" id = "finish">
+        <%= f.text_field :finish, placeholder: "Enter Colors of Product" %>
+        <span id="finish-feedback"></span>
+      </div>
+    </div>
+
+    <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+      <%= f.label :Condition %>
+      </div>
+      <div class="field-unit__field" id = "condition">
+        <%= f.text_field :condition, placeholder: "Enter Condition of Product" %>
+        <span id="condition-feedback"></span>
+      </div>
+    </div>
+
+      <div class="field-unit field-unit--string field-unit--optional">
+        <div class="field-unit__label">
+        <%= f.label :Quantity %>
+        </div>
+        <div class="field-unit__field" id = "quantity">
+        <%= f.number_field :quantity, placeholder: "Enter Quantity of Product", min: 1 %>
+        <span id="quantity-feedback"></span>
+        </div>
+      </div>
+
+      <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+        <%= f.label :Category %>
+      </div>
+      <div class="field-unit__field">
+       <%= f.collection_select(:category_ids, Category.all , :id, :name,
+       { prompt: "Please select Category"}, { multiple: true}) %>
+      </div>
+    </div>
+
+    <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+        <%#= f.label :Subcategory %>
+      </div>
+      <div class="field-unit__field">
+        <%#= f.collection_select(:category_ids, @category, :id, :name,
+        { prompt: " All Sub-Category"}) %>
+      </div>
+    </div>
+
+    <div class= "field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+      <%= f.label :image %>
+      </div>
+      <div class="field-unit__field">
+        <%= f.file_field :image %>
+      </div>
+    </div>
+
+  </section>
+    <div type = "submit" class="form-group row justify-content-md-center">
+    <%= f.submit%>
+    </div>
+<% end %>
+
+
+<script>
+console.log("234567");
+
+  $(function(){
+         alert("Product show page");
+    });
+</script>

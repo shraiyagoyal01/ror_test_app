@@ -1,0 +1,51 @@
+<h1 class="text-center mt-4"><%= @category.name %> Products </h1>
+
+<div class="container">
+  <div class="row">
+        <div class="row justify-content-md-center">
+        <% @category.products.each do |category| %>
+            <div class="card text-center shadow mb-5 bg-white rounded" style="width: 20rem"  id="card-styl">
+                
+              <div class="card-body">
+              <% if category.image.present? %> 
+             
+                <%= link_to product_path(category) do %>
+                <%= image_tag(category.image_url, class: "img-resm") %>
+                <% end %>
+              <% else %>
+                Looks like you don't have any images uploaded!   
+              <% end %>
+              </div>
+
+              <div class="card-body">
+                <h3><%= category.title %> </h3> 
+                <%#= category.description%>
+                <div class="container"><strong><%= number_to_currency( category.price ) %></strong>
+
+                <%#= form_with(model: Product.new , url: cart_items_path(product_id: category), class: "mb-2") do |form| %>
+                <div><%#= button_to ("<i class='fa fa-cart-plus mr-2'></i> Add to cart").html_safe, cart_items_path, class: "btn btn-warning" %></div>
+                <%# end %>
+
+                </div>
+              </div>
+            </div>
+        <% end %>  
+    
+    </div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+
+<script>
+console.log("123");
+console.log("234567");
+
+  $(function(){
+         alert("Category Show Page");
+    });
+
+</script>

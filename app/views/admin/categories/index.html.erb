@@ -1,0 +1,61 @@
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title">
+    Category
+  </h1>
+
+  <form class="search" role="search">
+    <label class="search__label" for="search">
+    </label>
+    <input class="search__input" id="search" type="search" name="search" placeholder="Search User" value>
+    <a class="search_clear-link" href="/admin/categories"></a>
+  </form>
+
+  <div>
+    <%= link_to 'New Category', new_admin_category_path(@category) , class: "button" %>
+  </div>
+</header>
+
+
+<section class="main-content__body main-content__body--flush">
+  <table aria-labelledby="page-title">
+    <thead>
+      <tr>
+        <th scope="col-2">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Short_Description</th>
+        <th scope="col">Parent</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>  
+    <tbody>
+      <% @category.each do |category| %>
+        <tr>
+          <td><%= category.id %></td>
+          <td><%= link_to category.name, admin_category_path(category) %></td>
+          <td><%= link_to category.s_description, admin_category_path(category)%></td>
+          <td><%= category.parent.name if category.parent%></td>
+          <td>
+          <%= link_to 'View', admin_category_path(category), class: 'btn btn-sm btn-success' %></td>
+
+          <td>
+          <span class="icon is-small">
+          <%= link_to 'Edit', edit_admin_category_path(category), class: 'btn btn-sm btn-success' %></td>
+          </span>
+
+          <td><%#= link_to edit_admin_category_path(category),class: 'btn btn-sm btn-success' do %>
+              <%#= fa_icon 'edit' %>
+              <%# end %>
+          </td>
+       
+          <td>
+          <%= link_to 'Delete', admin_category_path(category), method: :delete, class: 'btn btn-sm btn-success' %>
+         </td>
+
+        </tr>
+      <% end %>
+     
+
+    </tbody>
+  </table>  
+</section>

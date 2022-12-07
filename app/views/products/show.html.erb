@@ -1,0 +1,81 @@
+<div class="container">
+<section class="section product-show">
+
+   <header class="main-content__header" role="banner">
+        <h1 class="main-content__page-title mb-4 mt-4">
+        <%= @product.title %>
+        </h1>
+    </header>
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card" style="width: 31rem;" >
+                        <% if @product.image.present? %> 
+                            <%= image_tag(@product.image_url, class: "img-res") %>
+                        <% else %>
+                        No Image there    
+                        <% end %>
+                    </div>
+                </div>
+                <div class="col-sm">
+                <div class="col">
+                <div class="content mt-3 bg-white border-radius-3">
+                    <div class="container">
+                        <h3 class="subtitle is-4 pt-5">Description</h3>
+                            <%= @product.description %>
+                        <h3 class="subtitle is-4 pt-5">Product Specs</h3>
+        
+                        <table class="table is-narrow">
+                            <% if @product.condition %>
+                                <tr>
+                                <td class="has-text-weight-bold">Condition:</td>
+                                <td><%= @product.condition %></td>
+                                </tr>
+                            <% end %>
+        
+                            <% if @product.finish %>
+                                <tr>
+                                    <td class="has-text-weight-bold">Finish:</td>
+                                    <td><%= @product.finish %></td>
+                                </tr>
+                            <% end %>    
+        
+                            <% if @product.brand %>
+                                <tr>
+                                    <td class="has-text-weight-bold">Brand</td>
+                                    <td><%= @product.brand %></td>
+                                </tr>
+                            <% end %>
+        
+                            <tr> 
+                            <td class="has-text-weight-bold">Model:</td>
+                            <td><%= @product.model %></td>
+                            </tr>
+                        </table>
+                    </div>      
+                </div>
+            </div>    
+                </div>
+            </div>
+        </div>
+        
+    <div class="col-3 text-center">
+        <%= form_with(model: Product.new , url: cart_items_path(product_id: @product.id), class: "mb-2") do |form| %>
+                
+            <div class="column is-3 is-offset-1">
+                <div class="bg-white pa-4 border-radius-3">
+                    <h4 class="title is-5 has-text-centered"><%= number_to_currency(@product.price) %></h4>
+                    <div class="test mb-2">
+                        <%=  form.label :quantity, 'Qty' %>
+                        <%=  form.number_field :quantity, min: 1%>
+                    </div>
+                    <%= form.button ("<i class='fa fa-cart-plus mr-2'></i> Add to cart").html_safe,  class: "btn btn-warning" %>
+                    <% # form.submit 'Add to cart',  class: 'btn btn-info' %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</section>
+</div>
+

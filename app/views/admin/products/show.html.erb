@@ -1,0 +1,62 @@
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title">
+    Show Product
+  </h1>
+
+  <div>
+    <%= link_to 'Edit Product', edit_admin_product_path , class: "button" %>
+  </div>
+</header>
+
+<section class="section product-show">
+  <div class="container">
+    <dl>
+    <dt class="attribute-label" id="id">ID</dt>
+    <dd class="attribute-data attribute-data--number">
+      <%= @product.id %>
+    </dd>
+
+    <dt class="attribute-label" id="brand">Brand</dt>
+    <dd class="attribute-data attribute-data--number">
+      <%= @product.brand %>
+    </dd>
+
+    <dt class="attribute-label" id="model">Model</dt>
+    <dd class="attribute-data attribute-data--number">
+      <%= @product.model %>
+    </dd>
+
+    <dt class="attribute-label" id="description">Description</dt>
+    <dd class="attribute-data attribute-data--number">
+      <%= @product.description %>
+    </dd>
+
+    <dt class="attribute-label" id="finish">Finish</dt>
+    <dd class="attribute-data attribute-data--number">
+      <%= @product.finish %>
+    </dd>
+
+    <dt class="attribute-label" id="title">Title</dt>
+    <dd class="attribute-data attribute-data--number">
+      <%= @product.title %>
+    </dd>
+
+    <dt class="attribute-label" id="price">Price</dt>
+    <dd class="attribute-data attribute-data--number">
+      <%= @product.price %>
+    </dd>  
+
+    <dt class="attribute-label" id="quantity">Quantity</dt>
+    <dd class="attribute-data attribute-data--number">
+      <%= @product.quantity %>
+    </dd>  
+
+    <dt class="attribute-label" id="condition">Condition</dt>
+    <dd class="attribute-data attribute-data--number">
+      <%= @product.condition %>
+    </dd>  
+
+    </dl>
+  </div>
+</section>
+

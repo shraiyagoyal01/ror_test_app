@@ -1,0 +1,42 @@
+<div class="container">
+<section>
+  <table  class="table is-narrow br">
+ 
+    <tbody>
+    <tr>
+      <td>  
+        <div class="card" style="width: 5rem;">
+          <% if line_item.product.image.present? %> 
+              <%= image_tag(line_item.product.image_url, class: "img-resm") %>
+          <% else %>
+              No Image there    
+          <% end %>
+        </div>
+      </td>
+      <td><%= line_item.product.title %></td>
+      <td><%= number_to_currency(line_item.product.price) %></td>
+      <td>
+        <%= form_with(model: Product.new ,url: cart_items_path(), class: "mb-2") do |form| %>
+          <div class="form-group row mb-2">
+            <%=  form.number_field :quantity, value: line_item.quantity, class: "form-control shadow rounded w-25", min: 1%>
+          </div>
+            <%= line_item.quantity %>
+        <% end %>
+      </td>
+      <td><div class="content align-items-center">
+            <div class="col-8">
+              <strong class="f4"><%= number_to_currency(line_item.total_price) %></strong>
+            </div>
+          </div>
+      </td>
+
+        <td><%= button_to "Remove", cart_item_path(line_item) , method: :delete, data: {confirm: "Are you sure? " }, class: "btn btn-sm" %>
+      </td>
+    </tr> 
+    </tbody>
+  </table>  
+</section>
+</div>
+
+
+

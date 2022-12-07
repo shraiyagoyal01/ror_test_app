@@ -1,0 +1,42 @@
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title">
+    Show Category
+  </h1>
+
+  <div>
+    <%= link_to 'Edit Category', edit_admin_category_path, class: "button" %>
+  </div>
+</header>
+
+<section class="section product-show">
+  <div class="container">
+    <dl>
+      <dt class="attribute-label" id="id">ID</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @category.id %>
+      </dd>
+
+      <dt class="attribute-label" id="brand">Name</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @category.name %>
+      </dd>
+
+      <dt class="attribute-label" id="description">Short_Description</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @category.s_description %>
+      </dd>
+
+      <dt class="attribute-label" id="description">Long_Description</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @category.l_description %>
+      </dd>
+
+      <dt class="attribute-label" id="description">Parent</dt>
+      <dd class="attribute-data attribute-data--number">
+        <%= @category.parent.name if @category.parent %>
+      </dd>
+
+    </dl>
+  </div>
+</section>
+

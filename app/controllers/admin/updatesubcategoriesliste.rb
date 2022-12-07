@@ -1,0 +1,4 @@
+class UpdateSubcategoriesList < ApplicationController
+
+
+end

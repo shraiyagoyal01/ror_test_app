@@ -1,0 +1,41 @@
+<div class="container">
+  <h3>Shopping Cart</h3>
+  <div class="keep-shopping mt-4 mb-4 another-element">
+    <%= link_to 'Keep shopping', products_path, class: "btn btn-warning" %>
+  </div>
+
+  <section class="section">
+    <table  class="table is-narrow br">
+    <thead>
+    <tr>
+      <th scope="col-2">Item</th>
+      <th scope="col">Title</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Subtotal</th>
+    </tr>
+    </thead>  
+    <tbody>
+      <%= render(@cart.line_items) %>
+    </tbody>
+    </table>
+    <div class="container">
+    <div class="col">
+      <div class="btn-group">
+        <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        <%= button_to 'checkout', '#', class: "btn btn-secondary element" %>  
+      </div>
+
+      <div class="col another-element">
+      <%#= button_to 'checkout', '#', class: "btn btn-secondary" %>  
+      </div>
+      
+      <div class="col  another-element">
+        <h4 class="title is-4 mt-4">
+          <span class="text-grey">Total:</span> <%= number_to_currency(@cart.total_price) %>
+        </h4>
+      </div>
+    </div>
+    </div>
+  </section>
+</div>
