@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ 
+ .red{
+    background-color: beige;
+    height: 144;
+    color: brown;
+}
+.green{
+    background-color:rgb(161, 15, 15);
+    color: burlywood;
+}
+/* rgb
+rgba */

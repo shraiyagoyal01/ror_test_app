@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Css Selectors</title>
+    <style>
+        /* this is element selector */
+        h1 {
+            color: purple;
+        }
+
+        p {
+            background-color: sandybrown;
+        }
+
+        /* id selector example */
+        #red {
+            background-color: skyblue;
+        }
+
+        /* class selector */
+        .blue {
+            background-color: slategrey;
+            color: black;
+            border: blue;
+        }
+
+        /* grouping of element selector is possible  */
+        h2 {
+            background-color: darkkhaki;
+        }
+
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: chocolate;
+        }
+
+        /* can do only paragraph of particular class */
+        p.green {
+            color: rgb(71, 79, 47);
+        }
+
+        /* all margins and padding given by browser turns to 0 */
+        /* * { 
+            margin: 0;
+            padding: 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1> Here are CSS Selectors :-</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam minima ipsa fugit provident est, facilis
+            maiores obcaecati numquam accusantium rem aliquid dolores nulla aut itaque natus! Quaerat aliquid voluptatum
+            illo.</p>
+    </div>
+    <div id="red">
+        This is showing style through id selector
+        <br>
+        <br>
+        <span class="blue">This is showing Class selector</span>
+    </div>
+    <h2>This all showing Grouping of Element selector</h2>
+    <h3>1</h3>
+    <h4>2</h4>
+    <h5>3</h5>
+    <h6>4</h6>
+    <div class="green">
+        <h7>selected paragraph through class</h7>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex atque deleniti perferendis expedita quibusdam
+            beatae dignissimos sed debitis fuga, ratione cupiditate eos dolorem, iusto eum explicabo dolorum! Enim,
+            cumque voluptatem?</p>
+
+    </div>
+</body>
+
+</html>
